@@ -1223,6 +1223,70 @@
       border-color: var(--cream);
     }
 
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      padding: 16px 20px;
+      border-radius: 12px;
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 16px;
+      outline: none;
+      transition: all .3s ease;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--pop);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-form button {
+      margin-top: 8px;
+      justify-content: center;
+      border-color: transparent;
+      background: var(--pop);
+      color: white;
+      font-size: 16px;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -10px var(--pop);
+    }
+
     /* ------------ footer ------------ */
     footer {
       background: var(--ink);
@@ -1614,19 +1678,27 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="theme-btn" id="themebtn" aria-label="Toggle theme">
-        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41">
-          </path>
-        </svg>
-        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
+      <div class="nav-actions" style="display:flex; align-items:center; gap:16px;">
+        <a href="https://github.com/yassinerahhou" target="_blank" aria-label="GitHub Profile" style="color:var(--ink-soft); display:flex; transition:color .3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-soft)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/yassine-rahhou/" target="_blank" aria-label="LinkedIn Profile" style="color:var(--ink-soft); display:flex; transition:color .3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-soft)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <button class="theme-btn" id="themebtn" aria-label="Toggle theme">
+          <svg class="sun-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41">
+            </path>
+          </svg>
+          <svg class="moon-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -1834,7 +1906,7 @@
                   <path d="M7 17L17 7M9 7h8v8" />
                 </svg>
               </a>
-              <a href="#">Case study</a>
+              <a href="https://github.com/yassinerahhou" target="_blank">View Code ↗</a>
             </div>
           </div>
         </div>
@@ -1858,7 +1930,7 @@
                   <path d="M7 17L17 7M9 7h8v8" />
                 </svg>
               </a>
-              <a href="#">Read about it</a>
+              <a href="https://github.com/yassinerahhou" target="_blank">View Code ↗</a>
             </div>
           </div>
         </div>
@@ -1908,7 +1980,7 @@
                   <path d="M7 17L17 7M9 7h8v8" />
                 </svg>
               </a>
-              <a href="#">How it works</a>
+              <a href="https://github.com/yassinerahhou" target="_blank">View Code ↗</a>
             </div>
           </div>
         </div>
@@ -1977,7 +2049,7 @@
       </div>
 
       <div class="writing-cta">
-        <a href="#" class="btn ghost">Read all posts →</a>
+        <a href="#writing" class="btn ghost">More coming soon →</a>
       </div>
     </div>
   </section>
@@ -2076,27 +2148,43 @@
   <!-- ----------- CONTACT ----------- -->
   <section class="contact" id="contact">
     <div class="wrap" style="position:relative; z-index:1">
-      <div class="sec-label">06 · Say hi</div>
-      <h2>Let's build<br>something <em>nice</em>. <span class="waving">👋</span></h2>
-      <a href="mailto:yacin.rahhou@gmail.com" class="email">
-        yacin.rahhou@gmail.com
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M7 17L17 7M9 7h8v8" />
-        </svg>
-      </a>
-      <div class="socials">
-        <a href="https://github.com/yassinerahhou" target="_blank">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/yassine-rahhou/" target="_blank">LinkedIn ↗</a>
-        <a href="https://www.fiverr.com/yassinerahho374" target="_blank">Fiverr ↗</a>
-        <a href="mailto:yacin.rahhou@gmail.com">Email ↗</a>
-        <a href="#writing">The blog ↗</a>
+      <div class="contact-grid">
+        <div>
+          <div class="sec-label">06 · Say hi</div>
+          <h2>Let's build<br>something <em>nice</em>. <span class="waving">👋</span></h2>
+          <a href="mailto:yacin.rahhou@gmail.com" class="email">
+            yacin.rahhou@gmail.com
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M9 7h8v8" />
+            </svg>
+          </a>
+          <div class="socials">
+            <a href="https://github.com/yassinerahhou" target="_blank">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/yassine-rahhou/" target="_blank">LinkedIn ↗</a>
+            <a href="https://www.fiverr.com/yassinerahho374" target="_blank">Fiverr ↗</a>
+            <a href="mailto:yacin.rahhou@gmail.com">Email ↗</a>
+            <a href="#writing">The blog ↗</a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email address" required>
+            <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+            <button type="submit" class="btn primary">Send Message
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
     <div>© 2026 Yassine Rahhou — made with <span class="heart">♥</span> from Agadir</div>
-    <!-- <div>v5 · Inspired by cassie.codes</div> -->
   </footer>
 
   <!-- Tweaks -->
